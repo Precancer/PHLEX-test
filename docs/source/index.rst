@@ -1,11 +1,8 @@
-Welcome to Lumache's documentation!
+TRACERx-PHLEX - cell PHenotype and Location analysis of multiplEX imaging
+
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
-
+**TRACERx-PHLEX** is a modular pipeline for comprehensive analysis of the tumour microenvironment using multiplex imaging
 Check out the :doc:`usage` section for further information, including
 how to :ref:`installation` the project.
 
