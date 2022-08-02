@@ -1,9 +1,8 @@
 TRACERx-PHLEX
 =======================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+
 
 Read the tutorial here:
+https://tracerx-phlex.readthedocs.io/
 
-https://docs.readthedocs.io/en/stable/tutorial/
