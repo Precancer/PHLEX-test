@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'TRACERx PHLEX'
+copyright = '2022, The Francis crick Institute'
+author = 'Alastair Magness, Mihaela Angelova, Emma Colliver, Katey Enfield et al'
 
 release = '0.1'
 version = '0.1.0'
