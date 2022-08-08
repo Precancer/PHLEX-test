@@ -1,6 +1,5 @@
-**************************************************
 Introduction: Spatial analysis with Spatial-PHLEX:
-**************************************************
+==================================================
 The pipeline does all these excellent things.
 
 

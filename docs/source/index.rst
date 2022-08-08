@@ -18,7 +18,7 @@ Contents
 
 .. toctree::
    :hidden:
-   :caption: Getting started with TRACERx PHLEX
+   :caption: Getting started
    :maxdepth: 3
 
    install

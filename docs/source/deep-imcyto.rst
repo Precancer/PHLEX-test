@@ -10,6 +10,21 @@ The tool is available as a docker image and can be run on any machine with a GPU
 Segmentation modes
 ==================
 
+Deep-imcyto can perform nuclear and cellular segmentation in several modes:
+
++--------------------------------------+--------------------------------------------------------------------------------+
+| Option                               | Description                                                                    |
++======================================+================================================================================+
+| ``'consensus'``                      | Performs consensus cell segmentation as described in REF. Requires the user to |
+|                                      | Have a custom cellprofiler .cppipe file specifying the consensus cell          |
+|                                      | segmentation method for their IMC panel.                                       | 
+|                                      |                                                                                |               
++--------------------------------------+--------------------------------------------------------------------------------+
+| ``'dilation'``                       | Perform a simple whole cell segmentation by dilating nuclear predictions from  |
+|                                      | Unet++ model                                                                   |
++--------------------------------------+--------------------------------------------------------------------------------+
+
+
 Consensus cell segmentation
 ---------------------------
 
