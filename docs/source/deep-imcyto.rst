@@ -9,6 +9,13 @@ The tool is available as a docker image and can be run on any machine with a GPU
 Segmentation modes
 ------------------
 
+Consensus cell segmentation
+===========================
+
+Nuclear dilation
+================
+
+
 
 TRACERx Lung IMC nuclear training dataset
 -----------------------------------------

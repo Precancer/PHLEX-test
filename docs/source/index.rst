@@ -13,14 +13,6 @@ how to :ref:`installation` the project.
 Contents
 --------
 
-.. toctree::
-
-   usage
-   api
-   deep-imcyto
-   TYPEx
-   Spatial-PHLEX
-
 
 .. _getting-started:
 
@@ -31,8 +23,7 @@ Contents
 
    install
    quickstart
-   analyze
-   quickstart1x
+
 
 
 .. _deep-imcyto:
@@ -40,7 +31,7 @@ Contents
 .. toctree::
    :hidden:
    :caption: Deep-imcyto
-   :maxdepth: 1
+   :maxdepth: 2
 
    deep-imcyto
 
@@ -50,6 +41,8 @@ Contents
    :hidden:
    :caption: TYPEx
    :maxdepth: 1
+
+   TYPEx
 
 .. _Spatial-PHLEX:
 
