@@ -17,3 +17,6 @@ Contents
 
    usage
    api
+   deep-imcyto
+   TYPEx
+   Spatial-PHLEX
