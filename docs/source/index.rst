@@ -18,7 +18,7 @@ Contents
 
 .. toctree::
    :hidden:
-   :caption: Getting started
+   :caption: Getting started with TRACERx PHLEX
    :maxdepth: 3
 
    install
@@ -31,7 +31,7 @@ Contents
 .. toctree::
    :hidden:
    :caption: Deep-imcyto
-   :maxdepth: 2
+   :maxdepth: 3
 
    deep-imcyto
 
@@ -49,6 +49,6 @@ Contents
 .. toctree::
    :hidden:
    :caption: Spatial-PHLEX
-   :maxdepth: 1
+   :maxdepth: 2
 
    spatialPHLEX

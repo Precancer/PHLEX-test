@@ -1,23 +1,21 @@
+**************************************************
 Introduction: Spatial analysis with Spatial-PHLEX:
---------------------------------------------------
+**************************************************
 The pipeline does all these excellent things.
 
 
 Cell type niche analysis via density-based spatial clustering
--------------------------------------------------------------
+=============================================================
 Some information.
 
 
 Cellular barrier scoring
-------------------------
+========================
 Some more information.
 
-Running Spatial-PHLEX
----------------------
 
 Inputs
 ======
-# Inputs
 - `cell_objects.csv`
     - A plaintext, delimited file containing single cell-level coordinate data for a set of images, plus their phenotypic identities.
 - `metadata.csv`
