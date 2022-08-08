@@ -35,11 +35,11 @@ Contents
    quickstart1x
 
 
-.. _Deep-imcyto:
+.. _deep-imcyto:
 
 .. toctree::
    :hidden:
-   :caption: Main actions
+   :caption: Deep-imcyto
    :maxdepth: 1
 
    deep-imcyto
@@ -48,5 +48,14 @@ Contents
 
 .. toctree::
    :hidden:
-   :caption: Special cases
+   :caption: TYPEx
    :maxdepth: 1
+
+.. _Spatial-PHLEX:
+
+.. toctree::
+   :hidden:
+   :caption: Spatial-PHLEX
+   :maxdepth: 1
+
+   spatialPHLEX
