@@ -20,3 +20,33 @@ Contents
    deep-imcyto
    TYPEx
    Spatial-PHLEX
+
+
+.. _getting-started:
+
+.. toctree::
+   :hidden:
+   :caption: Getting started
+   :maxdepth: 3
+
+   install
+   quickstart
+   analyze
+   quickstart1x
+
+
+.. _Deep-imcyto:
+
+.. toctree::
+   :hidden:
+   :caption: Main actions
+   :maxdepth: 1
+
+   deep-imcyto
+
+.. _TYPEx:
+
+.. toctree::
+   :hidden:
+   :caption: Special cases
+   :maxdepth: 1
