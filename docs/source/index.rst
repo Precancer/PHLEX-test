@@ -8,7 +8,9 @@ Check out the :doc:`usage` section for further information, including
 how to :ref:`installation` the project.
 
 :ref:`Deep-imcyto`
+
 :ref:`TYPEx`
+
 :ref:`Spatial-PHLEX`
 
 .. note::
