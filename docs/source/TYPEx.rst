@@ -1,4 +1,4 @@
-.. _TYPEx:
+.. _TYPEx_anchor:
 
 Cell phenotyping with TYPEx
 ===========================
