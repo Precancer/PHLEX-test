@@ -25,6 +25,11 @@ Spatial-PHLEX parameters
     * - --objects_delimiter
       - The delimiter used in the cell objects file. e.g. ',' or '\t'.
 
+.. csv-table:: Spatial PHLEX input parameter definitions.
+   :file: params.csv
+   :widths: 30, 70
+   :header-rows: 1
+
 
 Cell type niche analysis via density-based spatial clustering
 =============================================================
