@@ -3,3 +3,11 @@
 Cell phenotyping with TYPEx
 ===========================
 
+Example usage
+=============
+
+Inputs and outputs
+==================
+
+Parameters
+============

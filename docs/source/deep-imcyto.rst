@@ -8,8 +8,17 @@ It is based on the U-Net++ architecture and is trained on the TRACERx nuclear IM
 
 The tool is available as a docker image and can be run on any machine with a GPU. 
 
-Segmentation modes
+Example usage
+=============
+
+Inputs and outputs
 ==================
+
+Parameters
+============
+
+Segmentation options
+====================
 
 Deep-imcyto can perform nuclear and cellular segmentation in several modes:
 
@@ -32,7 +41,15 @@ Consensus cell segmentation
 Nuclear dilation
 ----------------
 
+Special cases
+=============
+
+Segmentation of non-nucleated cells
+-----------------------------------
 
 
-TRACERx Lung IMC nuclear training dataset
-=========================================
+Troubleshooting
+===============
+
+Appendix: TRACERx Lung IMC nuclear training dataset
+===================================================
