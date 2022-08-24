@@ -71,6 +71,8 @@ Deep-imcyto can be run from a bash wrapper in the deep-imcyto root directory as 
 
 Inputs and outputs
 ==================
+Inputs
+-------
 - Required inputs:
     - `*.mcd` or `*.ome.tiff` images
         Input image files in `mcd`` or `ome.tiff` format.
@@ -82,6 +84,29 @@ Inputs and outputs
     - Spillover --compensation_tiff
         A spillover tiff image file for compensation of isotope channel spillover, as described in REF.
 
+Outputs
+-------
+
+Example output from Deep-imcyto has the following structure.
+
+.. code-block:: bash
+
+   results
+   ├── channel_preprocess
+   ├── cell_segmentation
+   ├── imctools          
+   ├── nuclear_preprocess        
+   ├── nuclear_segmentation
+   ├── pipeline_info
+   └── pseudo_HandE
+
+.. note::
+
+    The name of the `cell_segmentation` directory will vary depending on which `segmentation_type` is specified.
+
+- Raw tiff channel images from the input image files
+    - `*.tiff`
+    
 Parameters
 ============
 
