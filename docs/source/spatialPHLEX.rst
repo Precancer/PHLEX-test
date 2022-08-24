@@ -2,17 +2,10 @@
 
 Introduction: Spatial analysis with Spatial-PHLEX:
 ==================================================
-The pipeline does all these excellent things.
+The pipeline does all these excellent things:
 
-Cell type niche analysis via density-based spatial clustering
--------------------------------------------------------------
-Some information.
-
-
-Cellular barrier scoring
------------------------
-Some more information.
-
+- :ref:`Cell type niche analysis via density-based spatial clustering`
+- :ref:`Cellular barrier scoring`
 
 Inputs and outputs:
 ===================
@@ -81,3 +74,11 @@ Spatial PHLEX parameters are defined in the nextflow.config file in the Spatial 
 Troubleshooting
 ===============
 
+Cell type niche analysis via density-based spatial clustering
+-------------------------------------------------------------
+Some information.
+
+
+Cellular barrier scoring
+-----------------------
+Some more information.

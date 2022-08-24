@@ -1,4 +1,4 @@
-.. _Deep-imcyto:
+.. _imcyto_anchor:
 
 Segmentation with Deep-imcyto
 =============================
