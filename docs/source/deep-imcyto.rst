@@ -14,13 +14,13 @@ Example usage
 
 First, clone the TRACERx-PHLEX repository from github:
 
-.. prompt:: bash $
+.. code-block: bash
 
     git clone git@github.com:FrancisCrickInstitute/TRACERx-PHLEX.git
 
 Download the pre-trained model weights for prediction of nuclei using the U-Net++ model:
 
-.. prompt:: bash $
+.. code-block: bash
 
     wget URLTOFILE
 
@@ -28,7 +28,7 @@ Unzip the files and move `boundaries.hdf5`, `edge_weighted_nuc.hdf5`, `COM.hdf5`
 
 Deep-imcyto can be run from a bash wrapper in the deep-imcyto root directory as follows:
 
-.. prompt:: bash $
+.. code-block: bash
 
     #!/bin/bash
 
