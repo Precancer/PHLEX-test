@@ -9,6 +9,8 @@ The pipeline does all these excellent things:
 
 Inputs and outputs
 ==================
+Inputs
+-------
 - `cell_objects.csv`
     - A plaintext, delimited file containing single cell-level coordinate data for a set of images, plus their phenotypic identities.
 - `metadata.csv`
@@ -16,6 +18,23 @@ Inputs and outputs
 
 - Cell type specific spatial clusters
 - Barrier scores
+
+Outputs
+-------
+
+Output from Spatial-PHLEX has the following directory structure.
+
+.. code-block:: bash
+
+    results
+    ├── graph
+    │   ├── aggregated_barrier_scoring
+    │   └── raw_barrier_scoring
+    └── spatial_clustering
+
+.. note::
+
+    The name of the `raw_barrier_scoring` directory will vary depending on which Spatial-PHLEX `workflow` is specified.
 
 Example usage
 ===================

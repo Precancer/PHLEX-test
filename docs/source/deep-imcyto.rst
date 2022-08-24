@@ -87,7 +87,7 @@ Inputs
 Outputs
 -------
 
-Example output from Deep-imcyto has the following structure.
+Output from Deep-imcyto has the following directory structure.
 
 .. code-block:: bash
 

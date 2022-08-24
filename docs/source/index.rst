@@ -8,15 +8,15 @@ Check out the :ref:`installation` and :ref:`quickstart` guides for information o
 TRACERx-PHLEX contains three submodules, each devoted to a different problem in multiplex image processing:
 
 
-** - :ref:`PHLEX:Deep-imcyto<imcyto_anchor>`**
+- :ref:`Deep-imcyto<imcyto_anchor>`
 
       Nuclear and cellular segmentation in multiplex images.
 
-** - :ref:`PHLEX:TYPEx<TYPEx_anchor>`**
+- :ref:`TYPEx<TYPEx_anchor>`
 
       Cellular phenotyping from marker expression intensities derived from multiplex images.
 
-** - :ref:`Spatial-PHLEX`**
+- :ref:`Spatial-PHLEX`
 
       Automated spatial analysis of cell coordinate data.
 
