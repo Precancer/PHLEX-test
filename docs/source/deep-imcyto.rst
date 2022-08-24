@@ -14,48 +14,48 @@ Example usage
 
 First, clone the TRACERx-PHLEX repository from github:
 
-    .. prompt:: bash $
+.. prompt:: bash $
 
-        git clone git@github.com:FrancisCrickInstitute/TRACERx-PHLEX.git
+    git clone git@github.com:FrancisCrickInstitute/TRACERx-PHLEX.git
 
 Download the pre-trained model weights for prediction of nuclei using the U-Net++ model:
 
-    .. prompt:: bash $
+.. prompt:: bash $
 
-        wget URLTOFILE
+    wget URLTOFILE
 
 Unzip the files and move `boundaries.hdf5`, `edge_weighted_nuc.hdf5`, `COM.hdf5`, `AE_weights.hdf5` and `nuclear_morph_scaler.pkl` to a suitable directory.
 
 Deep-imcyto can be run from a bash wrapper in the deep-imcyto root directory as follows:
 
-    .. prompt:: bash $
+.. prompt:: bash $
 
-        #!/bin/bash
+    #!/bin/bash
 
-        ## LOAD MODULES
-        ml purge
-        ml Nextflow/22.04.0
-        ml Singularity/3.6.4
+    ## LOAD MODULES
+    ml purge
+    ml Nextflow/22.04.0
+    ml Singularity/3.6.4
 
-        # export cache directory for singularity
-        export SINGULARITY_CACHEDIR='/camp/project/proj-tracerx-lung/tctProjects/rubicon/inputs/containers/deep-imcyto'
-        export NXF_SINGULARITY_CACHEDIR='/camp/project/proj-tracerx-lung/tctProjects/rubicon/inputs/containers/deep-imcyto'
+    # export cache directory for singularity
+    export SINGULARITY_CACHEDIR='/camp/project/proj-tracerx-lung/tctProjects/rubicon/inputs/containers/deep-imcyto'
+    export NXF_SINGULARITY_CACHEDIR='/camp/project/proj-tracerx-lung/tctProjects/rubicon/inputs/containers/deep-imcyto'
 
-        ## RUN PIPELINE
-        nextflow run ./main.nf\
-            --input "/path/to/mcd.mcd"\
-            --outdir '../results'\
-            --metadata '/path/to/metadata.csv'\
-            --full_stack_cppipe './assets/cppipes/full_stack_preprocessing.cppipe'\
-            --segmentation_cppipe './assets/cppipes/segmentationP1.cppipe'\
-            --ilastik_stack_cppipe './assets/cppipes/ilastik_stack_preprocessing.cppipe'\
-            --compensation_tiff './assets/spillover/P1_imc*.tiff'\
-            --plugins "/path/to/plugins"\
-            --nuclear_weights_directory "/path/to/weights"\
-            --segmentation_type 'dilation'\
-            --nuclear_dilation_radius 5\
-            -profile crick\
-            -resume
+    ## RUN PIPELINE
+    nextflow run ./main.nf\
+        --input "/path/to/mcd.mcd"\
+        --outdir '../results'\
+        --metadata '/path/to/metadata.csv'\
+        --full_stack_cppipe './assets/cppipes/full_stack_preprocessing.cppipe'\
+        --segmentation_cppipe './assets/cppipes/segmentationP1.cppipe'\
+        --ilastik_stack_cppipe './assets/cppipes/ilastik_stack_preprocessing.cppipe'\
+        --compensation_tiff './assets/spillover/P1_imc*.tiff'\
+        --plugins "/path/to/plugins"\
+        --nuclear_weights_directory "/path/to/weights"\
+        --segmentation_type 'dilation'\
+        --nuclear_dilation_radius 5\
+        -profile crick\
+        -resume
 
 .. note::
 
