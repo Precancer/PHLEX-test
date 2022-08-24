@@ -11,6 +11,9 @@ Deep-imcyto is a Nextflow pipeline which started out as branch of the nfcore/imc
 
 Example usage
 =============
+.. note::
+
+    The example below assumes that you have Nextflow (version 22.04.0) and Singularity (version 3.6.4) installed on your system. Your mileage may vary with earlier versions.
 
 First, clone the TRACERx-PHLEX repository from github:
 
@@ -24,7 +27,7 @@ Download the pre-trained model weights for prediction of nuclei using the U-Net+
 
     wget URLTOFILE
 
-Unzip the files and move `boundaries.hdf5`, `edge_weighted_nuc.hdf5`, `COM.hdf5`, `AE_weights.hdf5` and `nuclear_morph_scaler.pkl` to a suitable directory.
+Unzip the files and move ``boundaries.hdf5``, ``edge_weighted_nuc.hdf5``, ``COM.hdf5``, ``AE_weights.hdf5`` and ``nuclear_morph_scaler.pkl`` to a suitable directory.
 
 Deep-imcyto can be run from a bash wrapper in the deep-imcyto root directory as follows:
 
@@ -38,8 +41,8 @@ Deep-imcyto can be run from a bash wrapper in the deep-imcyto root directory as 
     ml Singularity/3.6.4
 
     # export cache directory for singularity
-    export SINGULARITY_CACHEDIR='/camp/project/proj-tracerx-lung/tctProjects/rubicon/inputs/containers/deep-imcyto'
-    export NXF_SINGULARITY_CACHEDIR='/camp/project/proj-tracerx-lung/tctProjects/rubicon/inputs/containers/deep-imcyto'
+    export SINGULARITY_CACHEDIR='/path/to/cachedir/'
+    export NXF_SINGULARITY_CACHEDIR='/path/to/cachedir/'
 
     ## RUN PIPELINE
     nextflow run ./main.nf\
@@ -57,9 +60,6 @@ Deep-imcyto can be run from a bash wrapper in the deep-imcyto root directory as 
         -profile crick\
         -resume
 
-.. note::
-
-    The example below assumes that you have Nextflow (version 22.04.0) and Singularity (version 3.6.4) installed on your system. Your mileage may vary with earlier versions.
 
 .. note::
 

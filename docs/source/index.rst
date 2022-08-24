@@ -1,6 +1,5 @@
 TRACERx-PHLEX - cell PHenotype and Location analysis of multiplEX imaging
-
-===================================
+=========================================================================
 
 **TRACERx-PHLEX** is a modular pipeline for comprehensive analysis of the tumour microenvironment using multiplex imaging.
 
@@ -10,17 +9,17 @@ how to :ref:`installation` the project.
 TRACERx-PHLEX contains three submodules, each devoted to a different problem in multiplex image processing:
 
 
-#. :ref:`PHLEX:Deep-imcyto<imcyto_anchor>`
+- :ref:`PHLEX:Deep-imcyto<imcyto_anchor>`
 
-   A module devoted to performign accurate nuclear and cellular segmentation in multiplex images.
+      A module devoted to performign accurate nuclear and cellular segmentation in multiplex images.
 
-#. :ref:`PHLEX:TYPEx<TYPEx_anchor>`
+- :ref:`PHLEX:TYPEx<TYPEx_anchor>`
 
-   A module for cellular phenotyping from marker expression intensities derived from multiplex images.
+      A module for cellular phenotyping from marker expression intensities derived from multiplex images.
 
-#. :ref:`Spatial-PHLEX`
+- :ref:`Spatial-PHLEX`
 
-   A module for performing several types of automated spatial analysis.
+      A module for performing several types of automated spatial analysis.
 
 .. note::
 
