@@ -7,8 +7,8 @@ The pipeline does all these excellent things:
 - :ref:`Cell type niche analysis via density-based spatial clustering`
 - :ref:`Cellular barrier scoring`
 
-Inputs and outputs:
-===================
+Inputs and outputs
+==================
 - `cell_objects.csv`
     - A plaintext, delimited file containing single cell-level coordinate data for a set of images, plus their phenotypic identities.
 - `metadata.csv`
@@ -17,6 +17,8 @@ Inputs and outputs:
 - Cell type specific spatial clusters
 - Barrier scores
 
+Example usage
+===================
 
 Parameters
 ==========

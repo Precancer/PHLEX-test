@@ -63,7 +63,7 @@ Deep-imcyto can be run from a bash wrapper in the deep-imcyto root directory as 
 
 .. note::
 
-    The Singularity containers required by deep-imcyto are fairly large (~6GB). They will be built automatically by Nextflow, but this may take some time.
+    The Singularity container required by deep-imcyto is fairly large (~6GB). It will be built automatically by Nextflow, but this may take some time.
 
 .. tip::
 
@@ -71,6 +71,16 @@ Deep-imcyto can be run from a bash wrapper in the deep-imcyto root directory as 
 
 Inputs and outputs
 ==================
+- Required inputs:
+    - `*.mcd` or `*.ome.tiff` images
+        Input image files in `mcd`` or `ome.tiff` format.
+    - `metadata.csv`
+        A plaintext, delimited file containing isotope metadata for each image file.
+- Workflow-dependent inputs:
+    - `*.cppipe` files
+        CPPipe files for performing CellProfiler-based pipelines.
+    - Spillover --compensation_tiff
+        A spillover tiff image file for compensation of isotope channel spillover, as described in REF.
 
 Parameters
 ============

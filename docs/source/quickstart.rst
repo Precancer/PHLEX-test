@@ -1,9 +1,11 @@
 TRACERx-PHLEX
 =============
 
+.. _installation:
 Installation
 ============
 
+.. _quickstart:
 Quickstart
 ===========
 
