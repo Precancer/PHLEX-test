@@ -18,7 +18,10 @@ These steps are implemented as individual modules that can be run independently 
 
 Citations
 +++++++++++++++
-The pipeline is described in [Journal X](https://biorxiv.org).
+The pipeline is described in `Journal X <https://biorxiv.org>`_.
+Its application on TRACERx non-small cell lung cancer dataset is published in `Journal X <https://biorxiv.org>`_.
+
+If you use PHLEX or any of its modules for your analysis, please cite it using the following doi: ` <>`_
 
 
 
