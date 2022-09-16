@@ -13,8 +13,8 @@ These steps are implemented as individual modules that can be run independently 
 Quick start
 +++++++++++++++
 1. Install `Nextflow <https://www.nextflow.io/docs/latest/getstarted.html#installation>`_
-2. Install `Singularity <https://www.sylabs.io/guides/3.0/user-guide/>`_ or `Docker <https://docs.docker.com/engine/installation/>`_.
-3. `Download <https://>`_ the pipeline and a minimal dataset
+2. Install `Singularity <https://www.sylabs.io/guides/3.0/user-guide/>`_ or `Docker <https://docs.docker.com/engine/installation/>`_
+3. `Download <https://github.com/FrancisCrickInstitute/TRACERx-PHLEX/>`_ the pipeline and a minimal dataset
 4. Run TRACERx-PHLEX
 .. code-block:: console
    nextflow run phlex/main.nf
