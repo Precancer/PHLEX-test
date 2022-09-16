@@ -15,6 +15,7 @@ Quick start
 Tutorial
 +++++++++++++++
 Detailed tutorial on parameters, input files and functionalities is available on `tracerx-phlex.readthedocs.io/ <http://tracerx-phlex.readthedocs.io/>`_.
+
 .. image:: docs/source/_files/images/figure1_zoo_wbg.png
         :width: 700
         :alt: Alternative text
