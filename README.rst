@@ -3,7 +3,7 @@ TRACERx-PHLEX: One-stop pipeline for robust and comprehensive multiplexed imagin
 
 **TRACERx-PHLEX** is a user-friendly pipeline for an end-to-end analysis of multiplex imaging data.
 
-.. image:: source/docs/_files/images/figure1_zoom.png
+.. image:: docs/source/_files/images/figure1_zoom.png
         :width: 400
         :alt: Alternative text
         
@@ -19,7 +19,7 @@ Quick start
 
 Tutorial
 +++++++++++++++
-Detailed tutorial on parameters, input files and functionalities is available on [`tracerx-phlex.readthedocs.io/`][http://tracerx-phlex.readthedocs.io/.
+Detailed tutorial on parameters, input files and functionalities is available on `tracerx-phlex.readthedocs.io/ <http://tracerx-phlex.readthedocs.io/>`_.
 
 
 Citations
