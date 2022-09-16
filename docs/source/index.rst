@@ -12,6 +12,9 @@ Citations
 The pipeline is described in [Journal X](https://biorxiv.org).
 
 
+Contents
+--------
+
 **TRACERx-PHLEX** is a modular pipeline for comprehensive analysis of the tumour microenvironment using multiplex imaging.
 
 Check out the :doc:`quickstart` section for further information, including
@@ -30,14 +33,6 @@ TRACERx-PHLEX contains three submodules, each devoted to a different problem in 
 #. :ref:`Spatial-PHLEX`
 
    A module for performing several types of automated spatial analysis.
-
-.. note::
-
-   This project is under active development.
-
-Contents
---------
-
 
 .. _getting-started:
 
