@@ -1,10 +1,20 @@
-TRACERx-PHLEX - cell PHenotype and Location analysis of multiplEX imaging
 
+TRACERx-PHLEX: One-stop pipeline for robust and comprehensive multiplexed imaging analyses
 ===================================
+
+**TRACERx-PHLEX** is a user-friendly pipeline for an end-to-end analysis of multiplex imaging data.
+
+.. image:: _files/images/figure1_zoom.png
+        :width: 400
+        :alt: Alternative text
+Citations
++++++++++++++++
+The pipeline is described in [Journal X](https://biorxiv.org).
+
 
 **TRACERx-PHLEX** is a modular pipeline for comprehensive analysis of the tumour microenvironment using multiplex imaging.
 
-Check out the :doc:`usage` section for further information, including
+Check out the :doc:`quickstart` section for further information, including
 how to :ref:`installation` the project.
 
 TRACERx-PHLEX contains three submodules, each devoted to a different problem in multiplex image processing:
