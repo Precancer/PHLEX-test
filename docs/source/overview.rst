@@ -6,3 +6,7 @@ TRACERx-PHLEX: One-stop pipeline for robust and comprehensive multiplexed imagin
 .. image:: _files/images/figure1_zoom.png
         :width: 400
         :alt: Alternative text
+Citations
++++++++++++++++
+The pipeline is described in [Journal X](https://biorxiv.org).
+
