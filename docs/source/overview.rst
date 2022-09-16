@@ -7,8 +7,8 @@ TRACERx-PHLEX: One-stop pipeline for robust and comprehensive multiplexed imagin
 It implements and automates the following integral steps for multiplexed imaging analysis:
 
 - *segments nuclear and cell objects* (deep-imcyto)
-- automatically identifies and annotates *cell types and cell states* (TYPEx)
-- segments *tissue compartments* such as tumour and stroma (TYPEx)
+- automatically identifies and annotates *cell types and cell states* ( :ref:`PHLEX:TYPEx<TYPEx_anchor>` )
+- segments *tissue compartments* such as tumour and stroma ( :ref:`PHLEX:TYPEx<TYPEx_anchor>` )
 - performs a range of *spatial analyses* (Spatial-PHLEX)
 
 .. image:: _files/images/figure1_zoo_wbg.png
