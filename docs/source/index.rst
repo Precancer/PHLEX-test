@@ -23,16 +23,13 @@ how to :ref:`installation` the project.
 TRACERx-PHLEX contains three submodules:
 
 #. :ref:`PHLEX:Deep-imcyto<Deep-imcyto>`
-
-   A module devoted to nuclear and cellular segmentation in multiplexed images.
+A module devoted to nuclear and cellular segmentation in multiplexed images.
 
 #. :ref:`PHLEX:TYPEx<TYPEx_anchor>`
-
-   A module for identifying cell types and marker expression intensities.
+A module for identifying cell types and marker expression intensities.
 
 #. :ref:`Spatial-PHLEX`
-
-   A module for performing several types of automated spatial analysis.
+A module for performing several types of automated spatial analysis.
 
 .. _getting-started:
 
