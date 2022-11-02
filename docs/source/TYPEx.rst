@@ -5,12 +5,13 @@ Single-cell protein expression and cell phenotyping with TYPEx
 ===========================
 *No more hunt-and-pecking!*
 
-.. |workflow| image:: _files/images/typing3.png
-        :width: 200
+.. |workflow| image:: _files/images/typing4.png
+        :height: 200
         :alt: TYPEx workflow
 
+|workflow| 
 
-|workflow| TYPEx uses multiplexed imaging to detect protein expression on single cells, annotate cell types automatically based on user-provided definitions and quantify cell densities per tissue area. It can be customised with input parameters and configuration files, allowing it to perform an end-to-end cell phenotyping analysis without the need for manual adjustments. 
+TYPEx uses multiplexed imaging to detect protein expression on single cells, annotate cell types automatically based on user-provided definitions and quantify cell densities per tissue area. It can be customised with input parameters and configuration files, allowing it to perform an end-to-end cell phenotyping analysis without the need for manual adjustments. 
 
 Input Files and Parameters
 ==================
