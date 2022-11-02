@@ -1,10 +1,11 @@
 .. _TYPEx_anchor:
 
         
-Cell phenotyping with TYPEx
+Single-cell protein expression and cell phenotyping with TYPEx
 ===========================
+* No more hunt-and-pecking! *
 
-Performs identification, annotation and quantification of cell subpopulations and marker expression. Uses prior knowledge -> input files where this is configured are needed...
+TYPEx uses multiplexed imaging to detect protein expression on single cells, annotate cell types automatically based on user-provided definitions and quantify cell densities per tissue area.
 
 
 .. image:: _files/images/typing3.png
@@ -13,15 +14,23 @@ Performs identification, annotation and quantification of cell subpopulations an
 
 Parameters
 ============
+TYPEx can be customised with input parameters and configuration files, allowing it to perform an end-to-end cell phenotyping analysis without the need for manual adjustments. 
 Settings for which clustering approaches to use and which set of markers
-
+typing_params.json
 
 Inputs and outputs
 ==================
 
-- cell_type_annotation.json
-- typing_params.json
-- optional: tissue_segmentation.json where annotations of tissue can be overlaid and quantified.
+The minimal input for TYPEx is a matrix of cell intensities for each protein and a file with cell definitions specific to the user’s antibody panel.
+
+#. The input matrix has values that summarise the intensity of a protein per cell object, such as mean intensity, independently of the imaging modality or antibody tagging technique. 
+
+#. cell_type_annotation.json The cell-type definitions file includes a list of cell lineages and the corresponding marker proteins that together can be used to identify a cell lineage. When designing this file it is important to ensure that each cell in the cohort can be covered by these definitions. Some markers, such as CD45 and Vimentin, are expressed by multiple cell lineages. These shared proteins are used to infer a hierarchy of cell lineages, that is shown in Figure 2X, which is later considered for cell stratification and annotation.
+
+
+Optional input paramteers
+
+tissue_segmentation.json where annotations of tissue can be overlaid and quantified.
 
 
 Usage
