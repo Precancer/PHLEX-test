@@ -1,9 +1,7 @@
-.. _TYPEx_anchor:
+.. _TYPEx_anchor:        
+*No more hunt-and-pecking! Detecting single-cell protein expression and cell phenotyping with TYPEx*
 
-        
-Single-cell protein expression and cell phenotyping with TYPEx
-===========================
-*No more hunt-and-pecking!*
+
 
 .. |workflow| image:: _files/images/typing4.png
         :height: 200
