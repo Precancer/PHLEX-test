@@ -17,8 +17,6 @@ Input Files and Parameters
 The minimal input for TYPEx is a matrix of cell intensities for each protein and a file with cell definitions specific to the user’s antibody panel.
 
 
-
-
 #. *Input table* - The input matrix has values that summarise the intensity of a protein per cell object, such as mean intensity, independently of the imaging modality or antibody tagging technique.
 
 ================= ============ ===== ===== ============== ============ ============ ============
@@ -29,8 +27,16 @@ The minimal input for TYPEx is a matrix of cell intensities for each protein and
 
 #. *typing_params.json* - settings for which clustering approaches to use and which set of markers
 
-Optional input paramteers
+#. sample_annotation.table
+============ ================== ======= ===================
+  Image ID     Batch effect 1     ...     Batch effect N  
+============ ================== ======= ===================
+
+Input paramteers
 ==================
+
+* magnitude 
+As CellAssign was developed for single-cell sequencing read count data, the input protein intensity matrix should be rescaled to a range of 0 - 10^6 using the input parameter magnitude. 
 
 tissue_segmentation.json where annotations of tissue can be overlaid and quantified.
 
