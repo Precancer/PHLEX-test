@@ -27,19 +27,33 @@ The minimal input for TYPEx is a matrix of cell intensities for each protein and
 
 #. *typing_params.json* - settings for which clustering approaches to use and which set of markers
 
+* magnitude 
+As CellAssign was developed for single-cell sequencing read count data, the input protein intensity matrix should be rescaled to a range of 0 - 10^6 using the input parameter magnitude. 
+
+* batch_effects
+CellAssign also accounts for batch effects, which can be considered if provided in a sample-annotation table and specified as input parameters to TYPEx for batch correction.
+
 #. sample_annotation.table
 ============ ================== ======= ===================
   Image ID     Batch effect 1     ...     Batch effect N  
 ============ ================== ======= ===================
 
-Input paramteers
+
+Input paramters
 ==================
 
-* magnitude 
-As CellAssign was developed for single-cell sequencing read count data, the input protein intensity matrix should be rescaled to a range of 0 - 10^6 using the input parameter magnitude. 
+* clustering method
+* major cell definitions label
+* subtype definitions label
+* run ID: panel name, imcyto run [opt], study name
 
-tissue_segmentation.json where annotations of tissue can be overlaid and quantified.
+Within tissue_segmentation.json 
+where annotations of tissue can be overlaid and quantified.
 
+When using different workflows:
+- stratify
+- clustering
+- subsampling 
 
 Usage
 =============
