@@ -1,12 +1,15 @@
 .. _imcyto_anchor:
 
-Segmentation with Deep-imcyto
+PHLEX: deep-imcyto
 =============================
 
-Deep-imcyto is a deep learning based software pipeline for the identification of cells and nuclei in imaging  mass cytometry (IMC) data. 
-It is based on the U-Net++ architecture and is trained on the TRACERx nuclear IMC dataset consisting of 40,000+ nuclei from IMC images of lung and other tissue types. 
+**deep-imcyto** is a deep learning-based software pipeline for the identification of nuclei and cells in imaging mass cytometry (IMC) data. 
+It is based on a U-Net++ architecture combined with a custom postprocessing procedure, and is trained on the :ref:`TRACERx nuclear IMC dataset<NISD_anchor>` consisting of 40,000+ nuclei from IMC images of lung and other tissue types. 
 
-Deep-imcyto is a Nextflow pipeline which started out as branch of the nfcore/imcyto IMC analysis pipeline from van Maldegem et al.
+deep-imcyto began as branch of the nfcore/imcyto IMC analysis pipeline from van Maldegem et al. As such running deep-imcyto should be familiar to users of nfcore/imcyto.
+
+deep-imcyto is built using [Nextflow](https://www.nextflow.io), a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. 
+It comes with docker containers making installation trivial and results highly reproducible.
 
 
 Example usage
@@ -29,7 +32,7 @@ Download the pre-trained model weights for prediction of nuclei using the U-Net+
 
 Unzip the files and move ``boundaries.hdf5``, ``edge_weighted_nuc.hdf5``, ``COM.hdf5``, ``AE_weights.hdf5`` and ``nuclear_morph_scaler.pkl`` to a suitable directory.
 
-Deep-imcyto can be run from a bash wrapper in the deep-imcyto root directory as follows:
+deep-imcyto can be run from a bash wrapper in the deep-imcyto root directory as follows:
 
 .. code-block:: bash
 
@@ -41,7 +44,6 @@ Deep-imcyto can be run from a bash wrapper in the deep-imcyto root directory as 
     ml Singularity/3.6.4
 
     # export cache directory for singularity
-    export SINGULARITY_CACHEDIR='/path/to/cachedir/'
     export NXF_SINGULARITY_CACHEDIR='/path/to/cachedir/'
 
     ## RUN PIPELINE
@@ -51,14 +53,38 @@ Deep-imcyto can be run from a bash wrapper in the deep-imcyto root directory as 
         --metadata '/path/to/metadata.csv'\
         --full_stack_cppipe './assets/cppipes/full_stack_preprocessing.cppipe'\
         --segmentation_cppipe './assets/cppipes/segmentationP1.cppipe'\
-        --ilastik_stack_cppipe './assets/cppipes/ilastik_stack_preprocessing.cppipe'\
         --compensation_tiff './assets/spillover/P1_imc*.tiff'\
         --plugins "/path/to/plugins"\
         --nuclear_weights_directory "/path/to/weights"\
-        --segmentation_type 'dilation'\
+        --segmentation_workflow 'consensus'\
         --nuclear_dilation_radius 5\
         -profile crick\
         -resume
+
+.. code-block:: bash
+
+    #!/bin/bash
+
+    ## LOAD MODULES
+    ml purge
+    ml Nextflow/22.04.0
+    ml Singularity/3.6.4
+
+    # Define folder for deep-imcyto software containers to be stored:
+    export NXF_SINGULARITY_CACHEDIR='/camp/project/proj-tracerx-lung/tctProjects/rubicon/inputs/containers/deep-imcyto'
+
+    # RUN PIPELINE:
+    nextflow run ./main.nf\
+        --input "/camp/path/to/data/my_image.mcd"\
+        --outdir '/camp/path/to/results'\
+        --metadata '/camp/path/to/channel_metadata_deepimcyto.csv'\
+        --nuclear_weights_directory "/camp/path/to/weights"\ # The path to the directory containing the neural network weights.
+        --segmentation_workflow 'simple'\
+        --nuclear_dilation_radius 5\
+        --preprocess_method 'hotpixel'\
+        --email username@crick.ac.uk\
+        -profile crick\
+        -w '/path/to/work/directory' # Path to a suitable directory where the nextflow will save working/interim files e.g. lab scratch directory.
 
 
 .. note::
@@ -74,7 +100,7 @@ Inputs and outputs
 Inputs
 -------
 - Required inputs:
-    - `*.mcd` or `*.ome.tiff` images
+    - `*.mcd`, `*.txt` or `*.ome.tiff` images
         Input image files in `mcd`` or `ome.tiff` format.
     - `metadata.csv`
         A plaintext, delimited file containing isotope metadata for each image file.
@@ -87,7 +113,7 @@ Inputs
 Outputs
 -------
 
-Output from Deep-imcyto has the following directory structure.
+Output from deep-imcyto has the following directory structure.
 
 .. code-block:: bash
 
@@ -100,6 +126,25 @@ Output from Deep-imcyto has the following directory structure.
    ├── pipeline_info
    └── pseudo_HandE
 
+- Preprocessed channel images in `.tiff` format.
+    Preprocessing depends on the type of preprocessing specified with the `--preprocessing` flag:
+    - `--preprocessing 'cellprofiler'`
+        CellProfiler-based preprocessing of channel images.
+    - `--preprocessing 'hotpixel'`
+        Remove hot pixels from channel images only.`
+    - `--preprocessing 'none'`
+        No additional channel preprocessing.`
+- imctools
+    Raw tiff channel images, split into substacks for each identifier in the metadata.
+    .. code-block:: bash
+
+        imctools
+        ├── full_stack
+        ├── ilastik_stack
+        ├── nuclear          
+        ├── spillover        
+        ├── counterstain
+
 .. note::
 
     The name of the `cell_segmentation` directory will vary depending on which `segmentation_type` is specified.
@@ -110,10 +155,25 @@ Output from Deep-imcyto has the following directory structure.
 Parameters
 ============
 
+input                     = /camp/lab/swantonc/inputs/flowcytometry/Tx100/TMA_REC/P1_TMA_REC_20190508/P1_TMA_REC_20190508.mcd
+metadata                  = /camp/project/proj-tracerx-lung/tctProjects/rubicon/tracerx/tx100/imc/outputs/deep_imcyto/dsl2_testing/src/rubicon-deep-imcyto/assets/metadata/run_1_metadata_test.csv
+full_stack_cppipe         = ./assets/cppipes/full_stack_preprocessing.cppipe
+ilastik_stack_cppipe      = ./assets/cppipes/ilastik_stack_preprocessing.cppipe
+segmentation_cppipe       = ./assets/cppipes/segmentationP1.cppipe
+compensation_tiff         = /camp/project/proj-tracerx-lung/tctProjects/rubicon/tracerx/tx100/imc/outputs/deep_imcyto/dsl2_testing/src/rubicon-deep-imcyto/assets/spillover/P1_imc_sm_pixel_adaptive.tiff
+compensation_method       = NNLS
+plugins                   = /camp/project/proj-tracerx-lung/tctProjects/rubicon/tracerx/tx100/imc/outputs/deep_imcyto/dsl2_testing/src/rubicon-deep-imcyto/assets/plugins
+outdir                    = /camp/project/proj-tracerx-lung/tctProjects/rubicon/tracerx/tx100/imc/outputs/deep_imcyto/dsl2_testing/results_consensus_il_test
+email                     = alastair.magness@crick.ac.uk
+nuclear_weights_directory = /camp/project/proj-tracerx-lung/tctProjects/rubicon/tracerx/tx100/imc/outputs/deep_imcyto/dsl2_testing/weights
+segmentation_type         = consensus_il
+
+
+
 Segmentation options
 ====================
 
-Deep-imcyto can perform nuclear and cellular segmentation in several modes:
+deep-imcyto can perform nuclear and cellular segmentation in several modes:
 
 +--------------------------------------+--------------------------------------------------------------------------------+
 | Option                               | Description                                                                    |
@@ -123,10 +183,14 @@ Deep-imcyto can perform nuclear and cellular segmentation in several modes:
 |                                      | segmentation method for their IMC panel.                                       | 
 |                                      |                                                                                |               
 +--------------------------------------+--------------------------------------------------------------------------------+
+| ``'cellprofiler``                    | Performs cell segmentation using a custom CellProfiler pipeline.               |
+|                                      |                                                                                |
+|                                      |                                                                                | 
+|                                      |                                                                                |               
++--------------------------------------+--------------------------------------------------------------------------------+
 | ``'dilation'``                       | Perform a simple whole cell segmentation by dilating nuclear predictions from  |
 |                                      | Unet++ model                                                                   |
 +--------------------------------------+--------------------------------------------------------------------------------+
-
 
     Consensus cell segmentation
     ---------------------------
@@ -144,5 +208,6 @@ Segmentation of non-nucleated cells
 Troubleshooting
 ===============
 
+.. _NISD_anchor:
 Appendix: TRACERx Lung IMC nuclear training dataset
 ===================================================

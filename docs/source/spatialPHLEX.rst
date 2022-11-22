@@ -7,6 +7,9 @@ The pipeline does all these excellent things:
 - :ref:`Cell type niche analysis via density-based spatial clustering`
 - :ref:`Cellular barrier scoring`
 
+Example usage
+===================
+
 Inputs and outputs
 ==================
 Inputs
@@ -16,11 +19,11 @@ Inputs
 - `metadata.csv`
     - A plaintext, delimited file containing metadata information about the images in `cell_objects.csv`. To run the pipeline this file must contain, for each image, an image identifier (`'imagename'`), and the width and height in pixels for every image as columns with the header `'image_width'` and `'image_height'`.
 
-- Cell type specific spatial clusters
-- Barrier scores
 
 Outputs
 -------
+- Cell type specific spatial clusters
+- Barrier scores
 
 Output from Spatial-PHLEX has the following directory structure.
 
@@ -36,8 +39,6 @@ Output from Spatial-PHLEX has the following directory structure.
 
     The name of the `raw_barrier_scoring` directory will vary depending on which Spatial-PHLEX `workflow` is specified.
 
-Example usage
-===================
 
 Parameters
 ==========
@@ -101,5 +102,5 @@ Some information.
 
 
 Cellular barrier scoring
------------------------
+------------------------
 Some more information.
