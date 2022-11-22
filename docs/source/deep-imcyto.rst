@@ -6,7 +6,7 @@ PHLEX: deep-imcyto
 **deep-imcyto** is a deep learning-based software pipeline for the identification of nuclei and cells in imaging mass cytometry (IMC) data. 
 It is based on a U-Net++ architecture combined with a custom postprocessing procedure, and is trained on the :ref:`TRACERx nuclear IMC dataset<NISD_anchor>` consisting of 40,000+ nuclei from IMC images of lung and other tissue types. 
 
-deep-imcyto began as branch of the nfcore/imcyto IMC analysis pipeline from van Maldegem et al. As such running deep-imcyto should be familiar to users of nfcore/imcyto.
+deep-imcyto began as branch of the **nfcore/imcyto** IMC analysis pipeline from van Maldegem et al. As such running deep-imcyto should be familiar to users of nfcore/imcyto.
 
 deep-imcyto is built using [Nextflow](https://www.nextflow.io), a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. 
 It comes with docker containers making installation trivial and results highly reproducible.
@@ -71,7 +71,7 @@ deep-imcyto can be run from a bash wrapper in the deep-imcyto root directory as 
     ml Singularity/3.6.4
 
     # Define folder for deep-imcyto software containers to be stored:
-    export NXF_SINGULARITY_CACHEDIR='/camp/project/proj-tracerx-lung/tctProjects/rubicon/inputs/containers/deep-imcyto'
+    export NXF_SINGULARITY_CACHEDIR='/path/to/cachedir/'
 
     # RUN PIPELINE:
     nextflow run ./main.nf\
@@ -155,18 +155,14 @@ Output from deep-imcyto has the following directory structure.
 Parameters
 ============
 
-input                     = /camp/lab/swantonc/inputs/flowcytometry/Tx100/TMA_REC/P1_TMA_REC_20190508/P1_TMA_REC_20190508.mcd
-metadata                  = /camp/project/proj-tracerx-lung/tctProjects/rubicon/tracerx/tx100/imc/outputs/deep_imcyto/dsl2_testing/src/rubicon-deep-imcyto/assets/metadata/run_1_metadata_test.csv
-full_stack_cppipe         = ./assets/cppipes/full_stack_preprocessing.cppipe
-ilastik_stack_cppipe      = ./assets/cppipes/ilastik_stack_preprocessing.cppipe
-segmentation_cppipe       = ./assets/cppipes/segmentationP1.cppipe
-compensation_tiff         = /camp/project/proj-tracerx-lung/tctProjects/rubicon/tracerx/tx100/imc/outputs/deep_imcyto/dsl2_testing/src/rubicon-deep-imcyto/assets/spillover/P1_imc_sm_pixel_adaptive.tiff
-compensation_method       = NNLS
-plugins                   = /camp/project/proj-tracerx-lung/tctProjects/rubicon/tracerx/tx100/imc/outputs/deep_imcyto/dsl2_testing/src/rubicon-deep-imcyto/assets/plugins
-outdir                    = /camp/project/proj-tracerx-lung/tctProjects/rubicon/tracerx/tx100/imc/outputs/deep_imcyto/dsl2_testing/results_consensus_il_test
-email                     = alastair.magness@crick.ac.uk
-nuclear_weights_directory = /camp/project/proj-tracerx-lung/tctProjects/rubicon/tracerx/tx100/imc/outputs/deep_imcyto/dsl2_testing/weights
-segmentation_type         = consensus_il
+.. note::
+
+    Default parameters are specified in the `nextflow.config` file. Default parameters can be overridden by specifying the parameter in the command line. e.g. to change the default 
+    value by which predicted nucleus masks are dilated by in the `simple` workflow of deep-imcyto to 10 pixels (from a default of 5), the following flag should be added to the run command:
+
+    .. code-block:: bash
+
+        nextflow run main.nf --nuclear_dilation_radius 10
 
 
 
