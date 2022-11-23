@@ -11,6 +11,25 @@ deep-imcyto began as branch of the **nfcore/imcyto** IMC analysis pipeline from 
 deep-imcyto is built using [Nextflow](https://www.nextflow.io), a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. 
 It comes with docker containers making installation trivial and results highly reproducible.
 
+Workflow options
+================
+deep-imcyto provides three primary workflow options for raw IMC data:
+- `QC`: quality control of raw IMC data.
+- `simple` segmentation: segmentation of nuclei with the deep-imcyto nucleus segmentation model, followed by pixel expansion to approximate cellular boundaries.
+- `MCCS` / `cellprofiler` segmentation: segmentation of nuclei with the deep-imcyto nucleus segmentation model, followed by execution of a custom CellProfiler pipeline designed to take nuclear predictions as input.
+
+QC
+---
+
+Simple segmentation
+-------------------
+
+Multiplexed consensus cell segmentation
+---------------------------------------
+Multiplexed consensus cell segmentation (MCCS) is a method developed in the Swanton lab for segmenting cells in IMC data from accurate nuclear predictions.
+
+CellProfiler segmentation
+-------------------------
 
 Example usage
 =============
@@ -110,7 +129,7 @@ Inputs
     - Spillover --compensation_tiff
         A spillover tiff image file for compensation of isotope channel spillover, as described in REF.
 
-Outputs
+Expected Outputs
 -------
 
 Output from deep-imcyto has the following directory structure.
@@ -151,6 +170,9 @@ Output from deep-imcyto has the following directory structure.
 
 - Raw tiff channel images from the input image files
     - `*.tiff`
+
+
+
     
 Parameters
 ============
