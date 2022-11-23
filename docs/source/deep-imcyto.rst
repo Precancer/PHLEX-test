@@ -4,7 +4,7 @@ PHLEX: deep-imcyto
 =============================
 
 **deep-imcyto** is a deep learning-based software pipeline for the identification of nuclei and cells in imaging mass cytometry (IMC) data. 
-It is based on a U-Net++ architecture combined with a custom postprocessing procedure, and is trained on the :ref:`NISD-anchor`` consisting of 40,000+ nuclei from IMC images of lung and other tissue types. 
+It is based on a U-Net++ architecture combined with a custom postprocessing procedure, and is trained on the :ref:`TRACERx Lung IMC nuclear training dataset`. consisting of 40,000+ nuclei from IMC images of lung and other tissue types. 
 
 **deep-imcyto** began as branch of the **nfcore/imcyto** IMC analysis pipeline from van Maldegem et al. As such running deep-imcyto should be familiar to users of nfcore/imcyto.
 
@@ -224,5 +224,6 @@ Troubleshooting
 ===============
 
 .. _NISD-anchor:
-Appendix: TRACERx Lung IMC nuclear training dataset
-===================================================
+
+TRACERx Lung IMC nuclear training dataset
+==========================================
