@@ -6,9 +6,9 @@ PHLEX: deep-imcyto
 **deep-imcyto** is a deep learning-based software pipeline for the identification of nuclei and cells in imaging mass cytometry (IMC) data. 
 It is based on a U-Net++ architecture combined with a custom postprocessing procedure, and is trained on the :ref:`TRACERx nuclear IMC dataset<NISD_anchor>` consisting of 40,000+ nuclei from IMC images of lung and other tissue types. 
 
-deep-imcyto began as branch of the **nfcore/imcyto** IMC analysis pipeline from van Maldegem et al. As such running deep-imcyto should be familiar to users of nfcore/imcyto.
+**deep-imcyto** began as branch of the **nfcore/imcyto** IMC analysis pipeline from van Maldegem et al. As such running deep-imcyto should be familiar to users of nfcore/imcyto.
 
-deep-imcyto is built using [Nextflow](https://www.nextflow.io), a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. 
+**deep-imcyto** is built using `Link Nextflow: <https://www.nextflow.io>`, a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. 
 It comes with docker containers making installation trivial and results highly reproducible.
 
 Workflow options
@@ -18,18 +18,18 @@ deep-imcyto provides three primary workflow options for raw IMC data:
 - `simple` segmentation: segmentation of nuclei with the deep-imcyto nucleus segmentation model, followed by pixel expansion to approximate cellular boundaries.
 - `MCCS` / `cellprofiler` segmentation: segmentation of nuclei with the deep-imcyto nucleus segmentation model, followed by execution of a custom CellProfiler pipeline designed to take nuclear predictions as input.
 
-QC
----
+1. QC
+------
 
-Simple segmentation
--------------------
+2. 3. Simple segmentation
+--------------------------
 
-Multiplexed consensus cell segmentation
----------------------------------------
+3. Multiplexed consensus cell segmentation
+-------------------------------------------
 Multiplexed consensus cell segmentation (MCCS) is a method developed in the Swanton lab for segmenting cells in IMC data from accurate nuclear predictions.
 
-CellProfiler segmentation
--------------------------
+4. CellProfiler segmentation
+-----------------------------
 
 Example usage
 =============
