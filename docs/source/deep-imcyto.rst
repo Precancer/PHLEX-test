@@ -4,31 +4,31 @@ PHLEX: deep-imcyto
 =============================
 
 **deep-imcyto** is a deep learning-based software pipeline for the identification of nuclei and cells in imaging mass cytometry (IMC) data. 
-It is based on a U-Net++ architecture combined with a custom postprocessing procedure, and is trained on the :ref:`TRACERx nuclear IMC dataset<NISD_anchor>` consisting of 40,000+ nuclei from IMC images of lung and other tissue types. 
+It is based on a U-Net++ architecture combined with a custom postprocessing procedure, and is trained on the :ref:`NISD-anchor`` consisting of 40,000+ nuclei from IMC images of lung and other tissue types. 
 
 **deep-imcyto** began as branch of the **nfcore/imcyto** IMC analysis pipeline from van Maldegem et al. As such running deep-imcyto should be familiar to users of nfcore/imcyto.
 
-**deep-imcyto** is built using `Link Nextflow: <https://www.nextflow.io>`, a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. 
+**deep-imcyto** is built using `Nextflow <https://www.nextflow.io>`_, a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. 
 It comes with docker containers making installation trivial and results highly reproducible.
 
 Workflow options
 ================
 deep-imcyto provides three primary workflow options for raw IMC data:
-- `QC`: quality control of raw IMC data.
-- `simple` segmentation: segmentation of nuclei with the deep-imcyto nucleus segmentation model, followed by pixel expansion to approximate cellular boundaries.
-- `MCCS` / `cellprofiler` segmentation: segmentation of nuclei with the deep-imcyto nucleus segmentation model, followed by execution of a custom CellProfiler pipeline designed to take nuclear predictions as input.
+    -  *QC:* quality control of raw IMC data.
+    -  *simple segmentation*: segmentation of nuclei with the deep-imcyto nucleus segmentation model, followed by pixel expansion to approximate cellular boundaries.
+    -  *MCCS / cellprofiler* segmentation: segmentation of nuclei with the deep-imcyto nucleus segmentation model, followed by execution of a custom CellProfiler pipeline designed to take nuclear predictions as input.
 
-1. QC
-------
+Workflow 1: QC
+--------------
 
-2. 3. Simple segmentation
---------------------------
+Workflow 2: Simple segmentation
+-------------------------------
 
-3. Multiplexed consensus cell segmentation
--------------------------------------------
+Workflow 3: Multiplexed consensus cell segmentation
+---------------------------------------------------
 Multiplexed consensus cell segmentation (MCCS) is a method developed in the Swanton lab for segmenting cells in IMC data from accurate nuclear predictions.
 
-4. CellProfiler segmentation
+1. CellProfiler segmentation
 -----------------------------
 
 Example usage
@@ -155,6 +155,7 @@ Output from deep-imcyto has the following directory structure.
         No additional channel preprocessing.`
 - imctools
     Raw tiff channel images, split into substacks for each identifier in the metadata.
+    
     .. code-block:: bash
 
         imctools
@@ -182,9 +183,9 @@ Parameters
     Default parameters are specified in the `nextflow.config` file. Default parameters can be overridden by specifying the parameter in the command line. e.g. to change the default 
     value by which predicted nucleus masks are dilated by in the `simple` workflow of deep-imcyto to 10 pixels (from a default of 5), the following flag should be added to the run command:
 
-    .. code-block:: bash
+        .. code-block:: bash
 
-        nextflow run main.nf --nuclear_dilation_radius 10
+            nextflow run main.nf --nuclear_dilation_radius 10
 
 
 
@@ -210,11 +211,7 @@ deep-imcyto can perform nuclear and cellular segmentation in several modes:
 |                                      | Unet++ model                                                                   |
 +--------------------------------------+--------------------------------------------------------------------------------+
 
-    Consensus cell segmentation
-    ---------------------------
 
-    Nuclear dilation
-    ----------------
 
 Special cases
 =============
@@ -226,6 +223,6 @@ Segmentation of non-nucleated cells
 Troubleshooting
 ===============
 
-.. _NISD_anchor:
+.. _NISD-anchor:
 Appendix: TRACERx Lung IMC nuclear training dataset
 ===================================================
